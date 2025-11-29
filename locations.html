@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>أماكن ورش العمل - مصطفى موفق</title>
 
-  <!-- same theme init as index -->
+  <!-- same theme init as index (safe) -->
   <script>
     (function() {
-      var saved = localStorage.getItem('dm_theme');
+      function safeGet(key){ try { return localStorage.getItem(key); } catch(e){ return null; } }
+      function safeSet(key,val){ try { localStorage.setItem(key,val); } catch(e){} }
+      var saved = safeGet('dm_theme');
       if (saved) document.documentElement.setAttribute('data-theme', saved);
-      else document.documentElement.setAttribute('data-theme', 'light');
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.setAttribute('data-theme','dark');
+      else document.documentElement.setAttribute('data-theme','light');
+      window.__dm_safeSet = safeSet;
     })();
   </script>
 
@@ -115,7 +121,8 @@
       btn.addEventListener('click', function() {
         var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', t);
-        localStorage.setItem('dm_theme', t);
+        if (window.__dm_safeSet) window.__dm_safeSet('dm_theme', t);
+        else { try { localStorage.setItem('dm_theme', t); } catch(e){} }
         updateIcon(t);
       });
     })();

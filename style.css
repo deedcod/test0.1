@@ -639,6 +639,19 @@
   background: rgba(0,0,0,0.03);
 }
 
+/* === FALLBACKS for older browsers (no CSS variables) === */
+html, body {
+  /* basic fallback palette */
+  background-color: #ffffff;
+  color: #0f1720;
+}
+/* header fallback */
+.top-bar { background: #f8f9fb; border-bottom-color: rgba(15,23,32,0.06); }
+/* button fallback */
+.btn { background: #f59e0b; color: #071023; }
+/* card fallback */
+.cards-grid .card, .profile-card, .stat-box, .location-card { background: #fff; border-color: rgba(15,23,32,0.06); }
+
 /* Responsive */
 @media (max-width: 1000px) {
   .locations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

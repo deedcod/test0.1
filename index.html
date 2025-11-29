@@ -4,14 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مصطفى موفق - Dream Media</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- إعداد الثيم مبكراً لتجنّب فلاش -->
   <script>
-    // force light theme by default, but respect saved user choice
+    // safe theme initialization (guards old browsers / private mode where localStorage may throw)
     (function() {
-      var saved = localStorage.getItem('dm_theme');
+      function safeGet(key){ try { return localStorage.getItem(key); } catch(e){ return null; } }
+      function safeSet(key,val){ try { localStorage.setItem(key,val); } catch(e){} }
+      var saved = safeGet('dm_theme');
       if (saved) document.documentElement.setAttribute('data-theme', saved);
-      else document.documentElement.setAttribute('data-theme', 'light'); // changed: default to light
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.setAttribute('data-theme', 'light');
+      // expose safe helpers for later toggle script
+      window.__dm_safeSet = safeSet;
     })();
   </script>
 
@@ -367,13 +374,13 @@
         if (theme === 'dark') icon.textContent = '☀️';
         else icon.textContent = '🌙';
       }
-      // set initial icon from current theme attribute
       var current = document.documentElement.getAttribute('data-theme') || 'light';
       updateIcon(current);
       btn.addEventListener('click', function() {
         var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', t);
-        localStorage.setItem('dm_theme', t);
+        if (window.__dm_safeSet) window.__dm_safeSet('dm_theme', t);
+        else { try { localStorage.setItem('dm_theme', t); } catch(e){} }
         updateIcon(t);
       });
     })();
