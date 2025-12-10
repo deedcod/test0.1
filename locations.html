@@ -19,13 +19,16 @@
       window.__dm_safeSet = safeSet;
     })();
   </script>
-
+  
   <link rel="stylesheet" href="style.css" />
   
   <!-- ربط ملف التأثيرات الاحترافية -->
   <script src="assets/animations.js" defer></script>
 </head>
 <body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main-content">انتقل للمحتوى</a>
+
   <header class="top-bar">
     <!-- استبدل/حدّث جزء الهيدر كما في index (أضف زر lang-toggle و data-i18n على الروابط) -->
     <div class="container header-container">
@@ -55,7 +58,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="main-content" role="main" class="container">
     <!-- ضع data-i18n في العنوان والوصف وبطاقات الأماكن -->
     <section class="locations-hero">
       <h1 data-i18n="locations.title">أماكن ورش العمل التي قُدمت</h1>

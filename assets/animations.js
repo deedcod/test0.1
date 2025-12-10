@@ -1,34 +1,31 @@
 // تأثيرات التمرير الاحترافية
 document.addEventListener('DOMContentLoaded', function() {
-    // تهيئة المراقب للعناصر
+    // إضاءة احترافية للعناصر عند التمرير
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // إزالة المراقب بعد الظهور لتحسين الأداء
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // مراقبة الأقسام
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        observer.observe(section);
+    // مراقبة الأقسام والبطاقات
+    document.querySelectorAll('.section, .card, .course-card, .event-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
+        observer.observe(el);
     });
 
-    // مراقبة البطاقات
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-
-    // تأثير التمرير على الهيدر
+    // تأثير الهيدر عند التمرير
     let lastScrollTop = 0;
     const topBar = document.querySelector('.top-bar');
     
@@ -42,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScrollTop = scrollTop;
-    });
+    }, { passive: true });
 
-    // تأثير التمرير البطيء للروابط
+    // تأثير التمرير الناعم للروابط
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -61,18 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // تأثيرات التفاعل مع الأزرار
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
+            this.style.transform = 'translateY(-3px) scale(1.01)';
         });
         
         button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
 
     // تأثيرات التفاعل مع البطاقات
-    document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card, .course-card, .event-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-4px)';
+            this.style.transform = 'translateY(-6px)';
+            this.style.boxShadow = 'var(--shadow-lg)';
         });
         
         card.addEventListener('mouseleave', function() {
@@ -80,10 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // تأثيرات التفاعل مع إحصائيات البطل
+    // تأثيرات التفاعل مع الإحصائيات
     document.querySelectorAll('.stat-box').forEach(stat => {
         stat.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-4px) scale(1.02)';
+            this.style.transform = 'translateY(-5px) scale(1.03)';
         });
         
         stat.addEventListener('mouseleave', function() {
@@ -91,30 +89,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // عداد الأرقام المتحرك
+    // عداد الأرقام المتحرك الاحترافي
     function animateNumbers() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
         statNumbers.forEach(statNumber => {
-            const target = parseInt(statNumber.textContent);
-// إذا القيمة ليست رقم → تجاهل العنصر
-if (isNaN(target)) return;
-            const increment = target / 100;
+            const text = statNumber.textContent;
+            const match = text.match(/(\d+)/);
+            if (!match) return;
+            
+            const target = parseInt(match[1]);
+            const suffix = text.replace(match[1], '');
+            const increment = target / 80;
             let current = 0;
             
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
-                    statNumber.textContent = target;
+                    statNumber.textContent = target + suffix;
                     clearInterval(timer);
                 } else {
-                    statNumber.textContent = Math.floor(current);
+                    statNumber.textContent = Math.floor(current) + suffix;
                 }
-            }, 20);
+            }, 16);
         });
     }
 
-    // تشغيل عداد الأرقام عند ظهور الإحصائيات
+    // تشغيل العداد عند ظهور الإحصائيات
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -129,32 +130,54 @@ if (isNaN(target)) return;
         statsObserver.observe(heroStats);
     }
 
-    // تأثير التحميل التدريجي للصور
+    // تحميل الصور بتأثير ناعم
     const images = document.querySelectorAll('img');
     images.forEach(img => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.6s ease-out';
+        
         img.addEventListener('load', function() {
             this.style.opacity = '1';
-            this.style.transform = 'scale(1)';
         });
         
-        img.style.opacity = '0';
-        img.style.transform = 'scale(0.95)';
-        img.style.transition = 'all 0.5s ease-out';
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+            if (this.parentNode) this.parentNode.classList.add('no-image');
+        });
     });
 
-    // تأثير التركيز على حقول الإدخال
-    const inputs = document.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.borderColor = 'var(--primary)';
-            this.style.boxShadow = '0 0 0 3px rgba(var(--primary-rgb), 0.1)';
+    // Mobile nav toggle مع أداء محسّن
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileNavClose = document.getElementById('mobile-nav-close');
+
+    if (navToggle && mobileNav) {
+        navToggle.addEventListener('click', function() {
+            mobileNav.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
-        
-        input.addEventListener('blur', function() {
-            this.style.borderColor = 'var(--border)';
-            this.style.boxShadow = 'none';
+
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        }
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
         });
-    });
+
+        document.addEventListener('click', function(e) {
+            if (!mobileNav.contains(e.target) && !navToggle.contains(e.target) && mobileNav.classList.contains('open')) {
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 
     console.log('✨ Professional animations loaded successfully!');
 });
