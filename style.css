@@ -1151,8 +1151,8 @@ html:not([data-theme="dark"]) .theme-toggle .icon {
   .site-logo-circle { width: 38px; height: 38px; font-size: 13px; }
   .site-text .site-name { font-size: 15px; }
   .site-caption { display: none; } /* توفير المساحة */
-  .main-nav { display: none; } /* اعرض قائمة الموبايل فقط */
-  .nav-toggle { display: inline-flex; }
+  .main-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nav-toggle { display: none; }
 
   /* Mobile nav full-width sheet */
   .mobile-nav-inner { width: 100%; max-width: 100%; padding: 18px; border-radius: 0; box-shadow: none; }
@@ -2102,6 +2102,13 @@ h3 { font-size: 1.2rem; }
     display: block;
   }
 
+  /* جعل بطاقات آراء العملاء عمود واحد دائماً */
+  #testimonials .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   #testimonials .grid {
     justify-items: center;
   }
@@ -2132,7 +2139,7 @@ h3 { font-size: 1.2rem; }
     flex-wrap: wrap;
     gap: 16px;
   }
-
+  
   /* تحسين العرض على الهاتف */
   @media (max-width: 768px) {
     #testimonials .grid {
@@ -2324,4 +2331,36 @@ h3 { font-size: 1.2rem; }
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* ضمان اتجاه المستند يطابق لغة المستند */
+html[lang="en"] { direction: ltr; }
+html[lang="ar"] { direction: rtl; }
+
+/* تحسين مظهر mobile nav links لسهولة التمرير واللمس */
+.mobile-nav-inner nav a {
+  display: block;
+  padding: 14px 18px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* تباعد أفضل بين أعمدة البطاقات على الشاشات الكبيرة */
+@media (min-width: 1200px) {
+  .cards-grid { gap: 28px; grid-template-columns: repeat(3, 1fr); }
+  .courses-grid { grid-template-columns: repeat(3, minmax(320px, 1fr)); }
+}
+
+/* تحسين عرض بطاقات الأماكن والدورات ليبدو احترافياً على جميع الأجهزة */
+.location-card, .course-card, .event-card {
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.location-card:hover, .course-card:hover, .event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }

@@ -111,6 +111,9 @@ const translations = {
     "services.consult.campaigns": "إدارة ومراجعة الحملات الإعلانية.",
     "services.consult.sales": "تحسين المبيعات وأنظمة المتابعة.",
     "services.consult.crisis": "إدارة الأزمات التسويقية.",
+    "services.consult.systems": "بناء أنظمة التسويق والمبيعات.",
+    "services.consult.audit": "تدقيق تسويقي شامل (Marketing Audit).",
+    "services.consult.ai": "حلول ذكاء اصطناعي مخصصة.",
     "services.personal": "خدمات شخصية (1-to-1)",
     "services.personal.sessions": "جلسات استشارية فردية.",
     "services.personal.plan": "إعداد خطة تسويقية متكاملة.",
@@ -120,6 +123,18 @@ const translations = {
     "services.corp.programs": "تصميم برامج تدريبية داخلية.",
     "services.corp.assessments": "تقييم فرق التسويق والمبيعات.",
     "services.corp.policies": "إعداد سياسات ودليل إجراءات تسويقية.",
+    
+    "services.training": "تدريب وتطوير",
+    "services.training.corporate": "تدريب الشركات (Corporate Training).",
+    "services.training.workshops": "ورش عمل مكثفة.",
+    "services.training.bootcamps": "برامج تدريبية مكثفة (Bootcamps).",
+    "services.training.coaching": "جلسات تدريب فردي (Coaching).",
+    
+    "services.execution": "تنفيذ وتشغيل",
+    "services.execution.campaigns": "إدارة الحملات الإعلانية.",
+    "services.execution.content": "إدارة المحتوى والسوشيال ميديا.",
+    "services.execution.systems": "بناء أنظمة CRM وإدارة العملاء.",
+    "services.execution.growth": "إدارة النمو والتحسين المستمر.",
 
     "section.testimonials.title": "نماذج من آراء العملاء",
     "testimonials.quote1": "“بعد تدريب مصطفى، تضاعف أداء فريق التسويق عندنا، وصار الشغل أوضح والنتائج أسرع.”",
@@ -153,33 +168,132 @@ const translations = {
 
     "footer.copy": "© جميع الحقوق محفوظة لـ مصطفى موفق – دريم ميديا.",
 
-    "section.courses.title": "الدورات التدريبية المتخصصة",
-    "section.courses.subtitle": "برامج تدريبية متقدمة مصممة لتطوير المهارات القيادية والتسويقية والتجارية",
+    /* === COURSES SECTION === */
+    "section.courses.title": "برامج التدريب المتخصصة",
+    "section.courses.subtitle": "دورات تدريبية متقدمة مصممة لتطوير المهارات القيادية والتسويقية والتجارية",
     
-    "courses.strategic.title": "دورات القيادة الإستراتيجية",
-    "courses.strategic.items": "تطوير القيادة الإستراتيجية | تطوير استراتيجية المبيعات والتسويق | القيادة والإدارة التنظيمية | التخطيط التجاري وإدارة المشاريع | استراتيجية تجارية ونمو الإيرادات | إدارة التغيير وتحول الأعمال | تصميم برنامج التدريب التنفيذي | التعاون عبر الوظائف",
+    "course.strategic.title": "دورات القيادة الاستراتيجية",
+    "course.strategic.items": [
+      "تطوير استراتيجية المبيعات والتسويق",
+      "قيادة الفريق والإدارة التنظيمية",
+      "التخطيط التجاري وإدارة المشاريع",
+      "استراتيجية تجارية ونمو الإيرادات",
+      "إدارة التغيير وتحول الأعمال",
+      "تصميم برنامج التدريب التنفيذي",
+      "التعاون عبر الوظائف والعلاقات مع أصحاب المصلحة"
+    ],
     
-    "courses.technical.title": "دورات المهارات التقنية",
-    "courses.technical.items": "التسويق الرقمي المتقدم (SEO, SMM, SEM) | إدارة العلاقات وأتمتة التسويق | تطوير المحتوى والكتابة الإقناعية | أبحاث السوق وتحليل البيانات | تطوير العلامة التجارية وإدارتها | التسويق الأداء والتحسين | تحسين الأداء والنمو",
+    "course.technical.title": "دورات المهارات التقنية",
+    "course.technical.items": [
+      "التسويق الرقمي المتقدم (SEO، SMM، SEM)",
+      "إدارة علاقات العملاء وأتمتة التسويق",
+      "تطوير المحتوى والكتابة الإقناعية",
+      "أبحاث السوق وتحليل البيانات",
+      "تطوير العلامة التجارية وإدارتها",
+      "التسويق الأداء وتحسين الأداء"
+    ],
     
-    "courses.executive.title": "دورات القيادة التنفيذية",
-    "courses.executive.items": "دبلوم القيادة التنفيذية | أسس القيادة الإستراتيجية | تحول المؤسسات وإدارة التغيير | الحوكمة الشركية وقيادة المجلس | صنع القرار التنفيذي | التخطيط الاستراتيجي ونمو الأعمال | التحليل المالي للمديرين التنفيذيين | أسس تحليل الأعمال | تخطيط وإدارة المشاريع",
+    "course.executive.title": "دورات القيادة التنفيذية",
+    "course.executive.items": [
+      "دبلوم القيادة التنفيذية",
+      "أسس القيادة الاستراتيجية",
+      "تحول المؤسسات وإدارة التغيير",
+      "الحوكمة الشركية وقيادة مجلس الإدارة",
+      "اتخاذ القرار التنفيذي",
+      "التخطيط الاستراتيجي ونمو الأعمال",
+      "التحليل المالي للمديرين التنفيذيين",
+      "أسس تحليل الأعمال",
+      "التخطيط وإدارة المشاريع",
+      "الرؤية الاستراتيجية والتخطيط",
+      "تحول الأعمال",
+      "اتخاذ القرارات على مستوى عالٍ",
+      "القيادة التنظيمية",
+      "الإدارة عبر الوظائف",
+      "فهم الربح والخسارة",
+      "تحسين الأداء"
+    ],
     
-    "courses.commercial.title": "دورات مدير التجارة",
-    "courses.commercial.items": "استراتيجية تجارية ونمو الإيرادات | استراتيجية الدخول للسوق | استراتيجية التسعير وتموضع السوق | إدارة الحسابات الرئيسية | استراتيجية تطوير الأعمال | إدارة تجربة العميل | قيادة الإيرادات | التخطيط التجاري | استراتيجية اختراق السوق",
+    "course.commercial.title": "دورات مدير التجارة",
+    "course.commercial.items": [
+      "استراتيجية تجارية ونمو الإيرادات",
+      "استراتيجية الدخول للسوق",
+      "استراتيجية التسعير وتموضع السوق",
+      "إدارة الحسابات الرئيسية",
+      "استراتيجية تطوير الأعمال",
+      "إدارة تجربة العميل (CX)",
+      "قيادة الإيرادات",
+      "التخطيط التجاري",
+      "استراتيجية اختراق السوق",
+      "تطوير الشراكات",
+      "تحسين تجربة العميل",
+      "إدارة الربحية"
+    ],
     
-    "courses.sales.title": "دورات مدير المبيعات والتسويق",
-    "courses.sales.items": "إدارة المبيعات المتقدمة | تقنيات البيع الإقناعية | مهارات التفاوض الإستراتيجي | استراتيجية التسويق والتخطيط | الاتصالات التسويقية المتكاملة | الماركة وإدارة الماركة | قيادة المبيعات | تحسين القمع | التفاوض وإغلاق الصفقات",
+    "course.sales.title": "دورات مدير المبيعات والتسويق",
+    "course.sales.items": [
+      "إدارة المبيعات المتقدمة",
+      "تقنيات البيع الإقناعية",
+      "مهارات التفاوض الاستراتيجي",
+      "استراتيجية التسويق والتخطيط",
+      "الاتصالات التسويقية المتكاملة",
+      "العلامة التجارية وإدارتها",
+      "قيادة المبيعات",
+      "تحسين القمع",
+      "التفاوض وإغلاق الصفقات",
+      "تنفيذ استراتيجية التسويق",
+      "نمو العلامة التجارية",
+      "إدارة الأداء"
+    ],
     
-    "courses.marketing.title": "دورات إدارة التسويق",
-    "courses.marketing.items": "دبلوم التسويق الرقمي | برنامج إدارة المنتجات الاحترافي | استراتيجية المحتوى والكتابة | التسويق الأداء والتحليلات | شهادات متخصصة في SEO و SMM و SEM | أساسيات أتمتة التسويق | قيادة الحملات | استراتيجية المحتوى | النمو الرقمي",
+    "course.marketing.title": "دورات إدارة التسويق",
+    "course.marketing.items": [
+      "دبلوم التسويق الرقمي",
+      "برنامج إدارة المنتجات الاحترافي",
+      "استراتيجية المحتوى والكتابة",
+      "التسويق الأداء والتحليلات",
+      "شهادات متخصصة في SEO و SMM و SEM",
+      "أساسيات أتمتة التسويق (MarTech)",
+      "قيادة الحملات",
+      "استراتيجية المحتوى",
+      "النمو الرقمي",
+      "أبحاث السوق والرؤى",
+      "استراتيجية المنتج",
+      "إدارة أدوات تكنولوجيا التسويق"
+    ],
     
-    "courses.business.title": "دورات الأعمال",
-    "courses.business.items": "تحسين عمليات الأعمال | أبحاث وتحليل السوق | حل المشاكل والنمذجة | صنع القرار القائم على البيانات | أساسيات الاستشارات الإستراتيجية | مفاهيم التطوير التنظيمي | استشارة العميل | تشخيص الأعمال",
+    "course.business.title": "دورات الأعمال",
+    "course.business.items": [
+      "تحسين عمليات الأعمال",
+      "أبحاث وتحليل السوق",
+      "حل المشاكل والنمذجة",
+      "اتخاذ القرار القائم على البيانات",
+      "أساسيات الاستشارات الاستراتيجية",
+      "مفاهيم التطوير التنظيمي",
+      "استشارة العميل",
+      "تشخيص الأعمال",
+      "تطوير الاستراتيجية",
+      "تحسين العمليات",
+      "تحليل السوق والمنافسين",
+      "إدارة التغيير"
+    ],
     
-    "courses.trainer.title": "دورات تدريب المدربين والقادة",
-    "courses.trainer.items": "برنامج القيادة والتأثير | لغة الجسد والحضور التنفيذي | مهارات الاتصال الفعال | أساسيات تدريب المبيعات | المهارات الرقمية للمدربين | تقنيات التدريب والتيسير | الخطابة العامة | تقديم التدريب",
-
+    "course.trainer.title": "دورات تدريب المدربين والقادة",
+    "course.trainer.subtitle": "(المبيعات والتسويق والقيادة)",
+    "course.trainer.items": [
+      "برنامج القيادة والتأثير",
+      "لغة الجسد والحضور التنفيذي",
+      "مهارات الاتصال الفعال",
+      "أساسيات تدريب المبيعات",
+      "المهارات الرقمية للمدربين",
+      "تقنيات التدريب والتيسير",
+      "الخطابة العامة",
+      "تقديم التدريب",
+      "تطوير القيادة",
+      "تصميم ورش العمل",
+      "تدريب الفريق",
+      "إتقان الاتصال"
+    ],
+    
     // معلومات عامة عن الموقع
     "site.headline": "مصطفى موفق — الموقع الرسمي",
     "site.tagline": "استشاري تسويق وأعمال عالمي رائد | عضو مجلس إدارة ورئيس تنفيذي | مدير تسويق ومدير تجاري | أكثر من 200 شركة | أكثر من 10,000 متدرب | 12+ سنة من التأثير",
@@ -377,6 +491,22 @@ const translations = {
     "services.corp.programs": "Designing internal training programs.",
     "services.corp.assessments": "Assessing marketing and sales teams.",
     "services.corp.policies": "Developing marketing policies and procedures.",
+    
+    "services.training": "Training & Development",
+    "services.training.corporate": "Corporate Training.",
+    "services.training.workshops": "Intensive Workshops.",
+    "services.training.bootcamps": "Bootcamps.",
+    "services.training.coaching": "1-to-1 Coaching.",
+    
+    "services.execution": "Implementation & Operations",
+    "services.execution.campaigns": "Ad Campaign Management.",
+    "services.execution.content": "Content & Social Media Management.",
+    "services.execution.systems": "CRM & Customer Management Systems.",
+    "services.execution.growth": "Growth Management & Continuous Improvement.",
+    
+    "services.consult.systems": "Building marketing and sales systems.",
+    "services.consult.audit": "Comprehensive Marketing Audit.",
+    "services.consult.ai": "Custom AI Solutions.",
 
     "section.testimonials.title": "Client Testimonials",
     "testimonials.quote1": "“After Mostafa's training, our marketing team's performance doubled. Work is clearer and results are faster.”",
@@ -410,109 +540,165 @@ const translations = {
 
     "footer.copy": "© All rights reserved — Mostafa Muwafaq / Dream Media",
 
-    "section.courses.title": "Specialized Training Courses",
-    "section.courses.subtitle": "Advanced training programs designed to develop strategic, marketing, and commercial skills",
+    /* === COURSES SECTION === */
+    "section.courses.title": "Specialized Training Programs",
+    "section.courses.subtitle": "Advanced training courses designed to develop strategic, marketing, and commercial skills",
     
-    "courses.strategic.title": "Strategic Leadership Courses",
-    "courses.strategic.items": "Sales & Marketing Strategy Development | Team Leadership & Organizational Management | Business Planning & Project Management | Commercial Strategy & Revenue Growth | Change Management & Business Transformation | Executive Training Program Design | Cross-Functional Collaboration & Stakeholder Alignment",
+    "course.strategic.title": "Strategic Leadership Courses",
+    "course.strategic.items": [
+      "Sales & Marketing Strategy Development",
+      "Team Leadership & Organizational Management",
+      "Business Planning & Project Management",
+      "Commercial Strategy & Revenue Growth",
+      "Change Management & Business Transformation",
+      "Executive Training Program Design",
+      "Cross-Functional Collaboration & Stakeholder Alignment"
+    ],
     
-    "courses.technical.title": "Technical Skills Courses",
-    "courses.technical.items": "Advanced Digital Marketing (SEO, SMM, SEM) | CRM, Marketing Automation & Lead Management | Content Development, Copywriting & Brand Messaging | Market Research, Data Analytics & Insight Generation | Brand Development & Brand Management | Performance Marketing & Growth Optimization",
+    "course.technical.title": "Technical Skills Courses",
+    "course.technical.items": [
+      "Advanced Digital Marketing (SEO, SMM, SEM)",
+      "CRM, Marketing Automation & Lead Management",
+      "Content Development, Copywriting & Brand Messaging",
+      "Market Research, Data Analytics & Insight Generation",
+      "Brand Development & Brand Management",
+      "Performance Marketing & Growth Optimization"
+    ],
     
-    "courses.executive.title": "Executive Leadership Courses",
-    "courses.executive.items": "Executive Leadership Diploma | Strategic Leadership Foundations | Organizational Transformation & Change Management | Corporate Governance & Board Leadership | Executive Decision Making | Strategic Planning & Business Growth | Financial Analysis for Executives | Business Analysis Foundations | Project Planning & Management | Strategic Vision & Planning | Business Transformation | High Level Decision Making | Organizational Leadership | Cross-Functional Management | P&L Understanding | Performance Optimization",
+    "course.executive.title": "Executive Leadership Courses",
+    "course.executive.items": [
+      "Executive Leadership Diploma",
+      "Strategic Leadership Foundations",
+      "Organizational Transformation & Change Management",
+      "Corporate Governance & Board Leadership",
+      "Executive Decision Making",
+      "Strategic Planning & Business Growth",
+      "Financial Analysis for Executives",
+      "Business Analysis Foundations",
+      "Project Planning & Management",
+      "Strategic Vision & Planning",
+      "Business Transformation",
+      "High Level Decision Making",
+      "Organizational Leadership",
+      "Cross-Functional Management",
+      "P&L Understanding",
+      "Performance Optimization"
+    ],
     
-    "courses.commercial.title": "Commercial Director Courses",
-    "courses.commercial.items": "Commercial Strategy & Revenue Growth | Go-to-Market Strategy | Pricing Strategy & Market Positioning | Key Account Management | Business Development Strategy | Customer Experience Management (CX) | Revenue Leadership | Commercial Planning | Market Penetration Strategy | Partnership Development | CX Optimization | Profitability Management",
+    "course.commercial.title": "Commercial Director Courses",
+    "course.commercial.items": [
+      "Commercial Strategy & Revenue Growth",
+      "Go-to-Market Strategy",
+      "Pricing Strategy & Market Positioning",
+      "Key Account Management",
+      "Business Development Strategy",
+      "Customer Experience Management (CX)",
+      "Revenue Leadership",
+      "Commercial Planning",
+      "Market Penetration Strategy",
+      "Partnership Development",
+      "CX Optimization",
+      "Profitability Management"
+    ],
     
-    "courses.sales.title": "Sales & Marketing Director Courses",
-    "courses.sales.items": "Advanced Sales Management | Persuasive Selling Techniques | Strategic Negotiation Skills | Marketing Strategy & Planning | Integrated Marketing Communications | Branding & Brand Management | Sales Leadership | Funnel Optimization | Negotiation & Deal Closing | Marketing Strategy Execution | Brand Growth | Performance Management",
+    "course.sales.title": "Sales & Marketing Director Courses",
+    "course.sales.items": [
+      "Advanced Sales Management",
+      "Persuasive Selling Techniques",
+      "Strategic Negotiation Skills",
+      "Marketing Strategy & Planning",
+      "Integrated Marketing Communications",
+      "Branding & Brand Management",
+      "Sales Leadership",
+      "Funnel Optimization",
+      "Negotiation & Deal Closing",
+      "Marketing Strategy Execution",
+      "Brand Growth",
+      "Performance Management"
+    ],
     
-    "courses.marketing.title": "Marketing Management Courses",
-    "courses.marketing.items": "Digital Marketing Diploma | Product Management Professional Program | Content Strategy & Copywriting | Performance Marketing & Analytics | SEO, SMM & SEM Specialist Certifications | Marketing Automation & MarTech Foundations | Campaign Leadership | Content Strategy | Digital Growth | Market Research & Insights | Product Strategy | MarTech Tools Management",
+    "course.marketing.title": "Marketing Management Courses",
+    "course.marketing.items": [
+      "Digital Marketing Diploma",
+      "Product Management Professional Program",
+      "Content Strategy & Copywriting",
+      "Performance Marketing & Analytics",
+      "SEO, SMM & SEM Specialist Certifications",
+      "Marketing Automation & MarTech Foundations",
+      "Campaign Leadership",
+      "Content Strategy",
+      "Digital Growth",
+      "Market Research & Insights",
+      "Product Strategy",
+      "MarTech Tools Management"
+    ],
     
-    "courses.business.title": "Business Courses",
-    "courses.business.items": "Business Process Optimization | Market Research & Analysis | Problem Solving & Business Modeling | Data-Driven Decision Making | Strategic Consulting Fundamentals | Organizational Development Concepts | Client Advisory | Business Diagnosis | Strategy Development | Process Improvement | Market & Competitor Analysis | Change Management",
+    "course.business.title": "Business Courses",
+    "course.business.items": [
+      "Business Process Optimization",
+      "Market Research & Analysis",
+      "Problem Solving & Business Modeling",
+      "Data-Driven Decision Making",
+      "Strategic Consulting Fundamentals",
+      "Organizational Development Concepts",
+      "Client Advisory",
+      "Business Diagnosis",
+      "Strategy Development",
+      "Process Improvement",
+      "Market & Competitor Analysis",
+      "Change Management"
+    ],
     
-    "courses.trainer.title": "Executive Training Courses (Sales, Marketing, Leadership)",
-    "courses.trainer.items": "Leadership & Influence Program | Body Language & Executive Presence | Effective Communication Skills | Sales Coaching Fundamentals | Digital Skills for Trainers | Training & Facilitation Techniques | Public Speaking | Training Delivery | Leadership Development | Workshop Design | Team Coaching | Communication Mastery",
-
-    // Website Information
-    "site.headline": "MUSTAFA MUAFAQ — OFFICIAL WEBSITE",
-    "site.tagline": "Global Leading Marketing & Business Consultant | Board Member & CEO | CMO & Commercial Director | 200+ Companies | 10,000+ Trained | 12+ Years of Impact",
+    "course.trainer.title": "Executive Training Courses",
+    "course.trainer.subtitle": "(Sales, Marketing, Leadership)",
+    "course.trainer.items": [
+      "Leadership & Influence Program",
+      "Body Language & Executive Presence",
+      "Effective Communication Skills",
+      "Sales Coaching Fundamentals",
+      "Digital Skills for Trainers",
+      "Training & Facilitation Techniques",
+      "Public Speaking",
+      "Training Delivery",
+      "Leadership Development",
+      "Workshop Design",
+      "Team Coaching",
+      "Communication Mastery"
+    ],
     
-    // Founded Ventures
-    "ventures.title": "Ventures & Initiatives Founded",
-    "ventures.dream": "Dream Media: Developed advanced marketing and business growth frameworks, delivering measurable ROI, elevated brand positioning, and scalable strategies for companies across Iraq.",
-    "ventures.forsa": "Forsa Academy: Launched and managed high-impact training programs in business, leadership, marketing, and digital skills, serving thousands of professionals.",
-    "ventures.fakhama": "Fakhama: Built a luxury real estate marketing model focused on premium brand positioning, targeted campaigns, and strategic property storytelling.",
-    "ventures.qayam": "Qayam Podcast: Produced influential business dialogues sharing insights, leadership stories, and market perspectives.",
-    "ventures.summit": "Baghdad AI Summit: Founded the largest artificial intelligence summit in Iraq, bringing local and Arab experts, trainers, and industry leaders to Baghdad.",
-    "ventures.realestate": "Baghdad Real Estate Gathering: Created a specialized event uniting developers, investors, and real estate professionals to discuss trends, strategies, and opportunities.",
-    "ventures.broker": "Real Estate Brokerage Program: Designed a professional training program that standardizes real estate brokerage skills and elevates service quality.",
-    "ventures.corporate": "Multiple Corporate Training Programs: Developed tailored training tracks for managers, employees, and team leaders.",
-    
-    // Training & Impact
-    "impact.title": "Training & Professional Impact",
-    "impact.trained": "Trained over 10,000 employees across Iraq and the MENA region.",
-    "impact.companies": "Collaborated with more than 200 companies, ministries, institutions, and universities.",
-    "impact.sectors": "Delivered programs for various sectors, including telecommunications, real estate, banking, education, retail, IT, hospitality, and startups.",
-    
-    // Areas of Expertise
-    "expertise.title": "Areas of Training Expertise",
-    "expertise.leadership": "Leadership & Team Management",
-    "expertise.sales": "Sales & Customer Experience",
-    "expertise.digital": "Digital Marketing & Growth Strategy",
-    "expertise.business": "Business Development & Strategic Planning",
-    "expertise.product": "Product Management",
-    "expertise.communication": "Communication & Presentation Skills",
-    "expertise.performance": "Performance Optimization",
-    "expertise.martech": "Marketing Technology (MarTech)",
-    "expertise.ai": "AI-Driven Business Applications",
-    
-    // Government Ministries
-    "ministries.title": "Government Ministries Trained",
-    "ministries.list": "Ministry of Interior | Ministry of Foreign Affairs | Ministry of Defense | Ministry of Finance | Central Bank of Iraq | Ministry of Youth and Sports | Ministry of Higher Education | Ministry of Education | Ministry of Health | Ministry of Labor and Social Affairs | Ministry of Industry and Minerals | Ministry of Oil | Ministry of Electricity | Ministry of Communications | Ministry of Culture, Tourism and Antiquities | Ministry of Trade | Ministry of Transport | Ministry of Environment | Ministry of Water Resources | Ministry of Construction, Housing, Municipalities and Public Works",
-    
-    // Focus Areas
-    "focus.title": "Focus Areas",
-    "focus.points": "Leadership Development | Strategic Marketing | Sales Excellence | Digital Transformation | Entrepreneurship | Executive Skills | Luxury Marketing & Business Strategies",
-    
-    // Highlights of Impact
-    "highlights.title": "Highlights of Training & Consulting Impact",
-    "highlights.operations": "Enabled organizations to streamline operations, optimize market presence, and achieve significant revenue growth.",
-    "highlights.programs": "Created customized executive programs combining strategic insight and practical implementation.",
-    "highlights.innovation": "Pioneered innovative training methodologies integrating digital tools, AI insights, and modern business frameworks.",
-    "highlights.partnerships": "Built long-term partnerships with government and private sector leaders.",
-    
-    "section.events.title": "Exhibitions & Conferences",
+    "section.events.title": "Upcoming Exhibitions & Conferences",
     "section.events.subtitle": "Events and conferences I organized or participated in",
     
-    "event.1.title": "Baghdad AI Summit 2024",
-    "event.1.date": "May 2024",
-    "event.1.location": "Baghdad - International Convention Center",
-    "event.1.desc": "The largest artificial intelligence summit in Iraq, bringing together local and Arab experts, trainers, and industry leaders from around the world to discuss AI applications in business.",
-    "event.1.attendees": "500+ Attendees",
+    "events.tech.title": "Technology & Marketing Expo",
+    "events.tech.date": "January 10-12, 2025",
+    "events.tech.desc": "The largest technology and digital marketing exhibition in Iraq, with participation from over 50 companies and 2000 visitors.",
+    "events.tech.location": "📍 Baghdad - International Exhibition Center",
+    "events.tech.time": "🕐 9 AM - 6 PM",
+    "events.tech.attendees": "2000+ Visitors",
+    "events.tech.exhibitors": "50+ Companies",
+    "events.tech.type": "🏢 Trade Exhibition",
     
-    "event.2.title": "Baghdad Real Estate Gathering 2024",
-    "event.2.date": "April 2024",
-    "event.2.location": "Baghdad - Al-Rasheed Hotel",
-    "event.2.desc": "A specialized event bringing together developers, real estate professionals, and investors to discuss real estate marketing strategies and investment opportunities in the Iraqi market.",
-    "event.2.attendees": "300+ Attendees",
+    "events.realestate.title": "Real Estate & Investment Expo",
+    "events.realestate.date": "February 15-17, 2025",
+    "events.realestate.desc": "A unique opportunity to explore the latest real estate projects in Iraq, with specialized workshops in real estate marketing.",
+    "events.realestate.location": "📍 Erbil - Erbil International Center",
+    "events.realestate.time": "🕐 10 AM - 7 PM",
+    "events.realestate.attendees": "1500+ Visitors",
+    "events.realestate.exhibitors": "30+ Companies",
+    "events.realestate.type": "🏘️ Real Estate Exhibition",
     
-    "event.3.title": "Digital Marketing Summit 2023",
-    "event.3.date": "November 2023",
-    "event.3.location": "Baghdad - Technology Center",
-    "event.3.desc": "A specialized summit on digital marketing and e-commerce, bringing together marketers, entrepreneurs, and technicians to share best practices and modern strategies.",
-    "event.3.attendees": "400+ Attendees",
+    "events.education.title": "Education & Training Conference",
+    "events.education.date": "March 20-22, 2025",
+    "events.education.desc": "An annual conference bringing together education and training experts in Iraq, with specialized workshops and training opportunities.",
+    "events.education.location": "📍 Baghdad - Al-Mansour Hotel",
+    "events.education.time": "🕐 8 AM - 5 PM",
+    "events.education.attendees": "800+ Visitors",
+    "events.education.exhibitors": "25+ Companies",
+    "events.education.type": "🎓 Educational Conference",
     
-    "event.4.title": "Business Growth Conference 2023",
-    "event.4.date": "September 2023",
-    "event.4.location": "Amman - Jordan",
-    "event.4.desc": "A regional conference on business growth and organizational development, hosting international speakers and entrepreneurs from Middle East and North Africa countries.",
-    "event.4.attendees": "600+ Attendees",
-    
-    // ...rest of existing translations
+    "events.cta.booth": "Book a Booth",
+    "events.cta.register": "Register Attendance",
+    // ...existing code
   }
 };
 

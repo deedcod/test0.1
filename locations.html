@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,14 +45,14 @@
           <span class="icon">🌙</span>
         </button>
         <button id="lang-toggle" class="lang-toggle" aria-label="تبديل اللغة" title="تبديل اللغة">
-          <span class="lang-label">EN</span>
+          <span class="icon">EN</span>
         </button>
       </div>
 
       <nav class="main-nav">
         <a href="index.html" data-i18n="nav.home">الرئيسية</a>
-        <a href="#training" data-i18n="nav.training">التدريب</a>
-        <a href="#contact" data-i18n="nav.contact">تواصل</a>
+        <a href="index.html#training" data-i18n="nav.training">التدريب</a>
+        <a href="index.html#contact" data-i18n="nav.contact">تواصل</a>
         <a href="locations.html" aria-current="page" data-i18n="nav.locations">أماكن الورش</a>
       </nav>
     </div>
@@ -60,13 +60,13 @@
 
   <main id="main-content" role="main" class="container">
     <!-- ضع data-i18n في العنوان والوصف وبطاقات الأماكن -->
-    <section class="locations-hero">
-      <h1 data-i18n="locations.title">أماكن ورش العمل التي قُدمت</h1>
-      <p data-i18n="locations.caption">قائمة بالأماكن والمؤسسات التي قدّمتُ فيها ورش عمل وبرامج تدريبية — للاطلاع على التفاصيل أو طلب تكرار الورشة تواصل معي.</p>
+    <section class="locations-hero section">
+      <h1 class="section-title" data-i18n="locations.title">أماكن ورش العمل التي قُدمت</h1>
+      <p class="section-text" data-i18n="locations.caption">قائمة بالأماكن والمؤسسات التي قدّمتُ فيها ورش عمل وبرامج تدريبية — للاطلاع على التفاصيل أو طلب تكرار الورشة تواصل معي.</p>
     </section>
 
     <section class="locations-list section">
-      <div class="locations-grid">
+      <div class="locations-grid grid cards-grid">
         <!-- مثال بطاقة مكان -->
         <article class="location-card">
           <div class="loc-meta">
@@ -76,8 +76,8 @@
           <div class="venue" data-i18n="location.1.venue">كلية الإدارة/قاعة المحاضرات الرئيسية</div>
           <p class="desc" data-i18n="location.1.desc">ورشة تدريبية مكثفة في التسويق الرقمي وتطبيقات الذكاء الاصطناعي لتحسين أداء فرق التسويق.</p>
           <div class="actions">
-            <a class="map-btn" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
-            <a class="map-btn" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
+            <a class="btn outline" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
+            <a class="btn outline" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
           </div>
         </article>
 
@@ -89,8 +89,8 @@
           <div class="venue" data-i18n="location.2.venue">بغداد - شارع الرشيد</div>
           <p class="desc" data-i18n="location.2.desc">سلسلة ورش تطبيقية لبناء أنظمة تسويق ومبيعات داخل الشركات الناشئة.</p>
           <div class="actions">
-            <a class="map-btn" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
-            <a class="map-btn" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
+            <a class="btn outline" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
+            <a class="btn outline" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
           </div>
         </article>
 
@@ -102,8 +102,8 @@
           <div class="venue" data-i18n="location.3.venue">البصرة - مقر الشركة</div>
           <p class="desc" data-i18n="location.3.desc">ورشة داخلية لتحويل فرق التسويق للعمل بمنهجية تعتمد على البيانات وتحليل الحملات.</p>
           <div class="actions">
-            <a class="map-btn" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
-            <a class="map-btn" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
+            <a class="btn outline" data-i18n="location.map" href="https://maps.google.com" target="_blank" rel="noopener">عرض على الخريطة</a>
+            <a class="btn outline" data-i18n="location.request" href="mailto:info@dreammedia.com">اطلب إعادة الورشة</a>
           </div>
         </article>
 
